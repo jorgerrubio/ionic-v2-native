@@ -1,0 +1,43 @@
+<ion-header>
+
+  <ion-navbar danger>
+		<button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Camera</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  
+  <ion-card>
+    <img [src]="image" *ngIf="image" alt="Imagen desde la camara">
+
+    <ion-card-header>
+      Install
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>ionic plugin add cordova-plugin-camera</p>
+      <p>buena práctica guardar el estado de la aplicación cada vez que se agregue un plugin</p>
+      <p>ionic state save</p>
+    </ion-card-content>
+
+    <ion-row>
+      <ion-col>
+        <button primary clear (click)="getPicture('camera')">
+          <ion-icon name="camera"></ion-icon>
+          <div>Camera</div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button primary clear (click)="getPicture('picture')">
+          <ion-icon name="image"></ion-icon>
+          <div>Gallery</div>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-content>
